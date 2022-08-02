@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ListItem = ({ index, itemHeight, itemData }) => {
-  console.log(index, itemHeight, itemData);
   return (
     <div
       className="list-item"
