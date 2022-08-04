@@ -1,18 +1,21 @@
 import React from 'react';
 
-const GridItem = ({ index, itemHeight, itemData, columnCount }) => {
+const GridItem = ({ index, itemHeight, itemData, numberOfColumns }) => {
   return (
     <div
       className="grid-item"
       style={{
-        top: Math.floor(index / columnCount) * itemHeight,
+        top: Math.floor(index / numberOfColumns) * itemHeight,
         height: itemHeight,
-        width: `${100 / columnCount}%`,
-        left: `${(index % columnCount) * (100 / columnCount)}%`,
-        backgroundColor: 'yellow',
+        width: `${100 / numberOfColumns}%`,
+        left: `${(index % numberOfColumns) * (100 / numberOfColumns)}%`,
       }}
     >
-      <div>{`row ${itemData + 1}`}</div>
+      {itemData === undefined || itemData === null ? (
+        <div>Empty card</div>
+      ) : (
+        <div>{`row ${itemData + 1}`}</div>
+      )}
     </div>
   );
 };
